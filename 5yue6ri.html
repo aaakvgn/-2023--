@@ -1,0 +1,97 @@
+<html>
+<head>
+  <script>
+  function randomInt() {
+    return Math.floor(Math.random() * 10);
+  }
+
+
+  var a = randomInt();
+  var b = randomInt();
+
+
+  var sum = a + b;
+
+
+  function checkAnswer() {
+
+    var answer = document.getElementById("answer").value;
+
+    var result = document.getElementById("result");
+
+    if (Number(answer) === sum) {
+
+      result.innerHTML = "你答对了！" + a + " + " + b + " = " + sum + "。";
+      result.style.color = "green";
+    } else {
+
+      result.innerHTML = "抱歉，你答错了。再试一次。";
+      result.style.color = "red";
+    }
+  }
+
+
+  </script>
+  <style>
+    #box {
+      width: 300px;
+      height: 200px;
+      border: 2px solid black;
+      margin: auto;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+    }
+
+
+    input {
+      width: 150px;
+      height: 30px;
+      font-size: 20px;
+    }
+
+
+    button {
+      width: 100px;
+      height: 40px;
+      font-size: 20px;
+      background-color: lightblue;
+      border: none;
+      cursor: pointer;
+    }
+
+
+    button:hover {
+      background-color: blue;
+      color: white;
+    }
+
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="box">
+    <!-- 显示加法问题 -->
+    <p id="question"></p>
+    <!-- 创建一个用于输入答案的表单 -->
+    <form>
+      <!-- 创建一个用于输入答案的输入元素 -->
+      <input type="text" id="answer" placeholder="输入你的答案">
+      <!-- 创建一个用于提交答案的按钮元素 -->
+      <button type="button" onclick="checkAnswer()">提交</button>
+    </form>
+    <!-- 创建一个用于显示结果的元素 -->
+    <p id="result"></p>
+  </div>
+  <script>
+     document.getElementById("question").innerHTML = a + " + " + b + " = ?";
+   </script>
+</body>
+
+</html>
